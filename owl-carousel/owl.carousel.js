@@ -477,7 +477,7 @@ if (typeof Object.create !== "function") {
                         "class" : "owl-page"
                     });
                     paginationButtonInner = $("<span></span>", {
-                        "text": base.options.paginationNumbers === true ? counter : "",
+                        "text": base.options.paginationNumbers === true ? (base.options.pageTitles === false ? counter : base.options.pageTitles[counter-1]) : "",
                         "class": base.options.paginationNumbers === true ? "owl-numbers" : ""
                     });
                     paginationButton.append(paginationButtonInner);
@@ -1475,6 +1475,7 @@ if (typeof Object.create !== "function") {
 
         pagination : true,
         paginationNumbers : false,
+        pageTitles : false,
 
         responsive : true,
         responsiveRefreshRate : 200,
